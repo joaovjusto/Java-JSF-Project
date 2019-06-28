@@ -1,0 +1,38 @@
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<ui:composition template="template.xhtml">	
+
+		<ui:define name="conteudo">
+		
+		<h1>Carrinho</h1>
+		<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">Quantidade</th>
+							<th scope="col">Nome</th>
+							<th scope="col">Descrição</th>
+							<th scope="col">Preço</th>
+						</tr>
+					</thead>
+					<tbody>
+						<ui:repeat value="#{mbeanCarrinho.itens}" var="item">
+						<tr>
+							<td><h:outputText value="#{item.quantidade}"></h:outputText></td>
+							<td><h:outputText value="#{item.produto.nome}"></h:outputText></td>		
+							<td><h:outputText value="#{item.produto.descricao}"></h:outputText></td>	
+							<td><h:outputText value="#{item.produto.preco}"></h:outputText></td>						
+						</tr>
+						</ui:repeat>			
+					</tbody>
+				</table>
+		
+		</ui:define>
+	
+	</ui:composition>
+</html>
