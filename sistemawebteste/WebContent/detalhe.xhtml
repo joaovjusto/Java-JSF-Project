@@ -16,6 +16,8 @@
 		<img src="CarregarImagemProduto?idProduto=#{mbeanDetalhe.produto.id}"
 		class="card-img-top" />
 		<h3><h:outputText value="#{mbeanDetalhe.produto.nome}" /></h3>
+		<h3><h:outputText value="#{mbeanDetalhe.produto.descricao}" /></h3>
+		<h3><h:outputText value="#{mbeanDetalhe.produto.preco}" /></h3>
 		
 		<h:commandLink action="#{mbeanCarrinho.adicionar(mbeanDetalhe.produto)}"
 							value="Comprar"

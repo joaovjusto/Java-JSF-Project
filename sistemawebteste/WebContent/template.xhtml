@@ -16,15 +16,19 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous"></link>
+	
+<link rel="stylesheet" href="./template-snippets/css/core-style.css"></link>
+    <link rel="stylesheet" href="style.css"></link>
+    
 
 <title>
-	<ui:insert name="titulo">Sistema Web 1</ui:insert>
+	<ui:insert name="titulo">Loja do Java</ui:insert>
 </title>
 
 </head>
-<body>
+<body style="margin-top: 0 !important;">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="index.jsf">Sistema Web</a>
+		<a class="navbar-brand" href="index.jsf">Loja do Java</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -37,9 +41,9 @@
 					id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
 					aria-haspopup="true" aria-expanded="false"> Menu </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="cadastroProduto.jsf">Cadastro Produto</a>
 						<a class="dropdown-item" href="cadastro.jsf">Cadastro Cliente</a>
 						 <a class="dropdown-item" href="carrinho.jsf">Carrinho</a>
-						 <a class="dropdown-item" href="cadastroProduto.jsf">Cadastro Produto</a>
 					</div></li>
 			</ul>
 		</div>
@@ -67,5 +71,13 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
+	<!-- Popper js -->
+    <script src="./template-snippets/js/popper.min.js"></script>
+    <!-- Plugins js -->
+    <script src="./template-snippets/js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="./template-snippets/js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="./template-snippets/js/active.js"></script>
 </body>
 </html>
