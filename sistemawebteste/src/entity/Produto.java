@@ -15,6 +15,7 @@ public class Produto {
 	private Integer id;
 	private String nome;
 	private String preco;
+	private String categoria;
 	private String descricao;
 	private String caminhoDaImagem;
 
@@ -57,6 +58,14 @@ public class Produto {
 
 	public void setPreco(String preco) {
 		this.preco = preco;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
 }

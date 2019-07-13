@@ -23,7 +23,13 @@
 						jsf:id="id"
 						jsf:value="#{mbeanProduto.id}"
 						readonly="readonly"/>
-				</div>
+				</div>	
+			    <label for="categoria">Categoria:</label>
+			    <h:selectOneMenu class="form-control" value="#{mbeanProduto.categoria}">
+				   	<f:selectItem itemValue="Jogos" itemLabel="Jogos" />
+				   	<f:selectItem itemValue="Musica" itemLabel="Música" />
+				   	<f:selectItem itemValue="Roupas" itemLabel="Roupas" />
+				</h:selectOneMenu>
 				<div class="form-group">
 					<label for="foto">Foto</label> 
 					<input
@@ -69,27 +75,30 @@
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">Nome</th>
-							<th scope="col">Login</th>					
-							<th scope="col"> </th>
-							<th scope="col"> </th>
+							<th scope="col">Preço</th>	
+							<th scope="col">Descrição</th>					
+							<th scope="col"> Categoria</th>
 						</tr>
 					</thead>
 					<tbody>
-						<ui:repeat value="#{mbeanCliente.clientes}" var="cliente">
+						<ui:repeat value="#{mbeanProduto.produtos}" var="produto">
 						<tr>
-							<td><h:outputText value="#{cliente.id}"></h:outputText></td>
-							<td><h:outputText value="#{cliente.nome}"></h:outputText></td>
-							<td><h:outputText value="#{cliente.login}"></h:outputText></td>
+							<td><h:outputText value="#{produto.id}"></h:outputText></td>
+							<td><h:outputText value="#{produto.nome}"></h:outputText></td>
+							<td><h:outputText value="#{produto.preco}"></h:outputText></td>
+							
+							<td><h:outputText value="#{produto.descricao}"></h:outputText></td>
+							<td><h:outputText value="#{produto.categoria}"></h:outputText></td>
 							<td>
 							<h:commandLink 
 								styleClass="btn btn-info" 
-								action="#{mbeanCliente.carregar(cliente)}" 
+								action="#{mbeanProduto.carregar(produto)}" 
 								value="Editar" />							
 							</td>					
 							<td>
 								<h:commandLink 
 								styleClass="btn btn-danger" 
-								action="#{mbeanCliente.excluir(cliente)}" 
+								action="#{mbeanProduto.excluir(produto)}" 
 								value="Excluir" />						
 							</td>
 						</tr>

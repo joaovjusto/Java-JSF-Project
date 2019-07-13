@@ -60,8 +60,8 @@ public class MbeanCliente {
 			byte [] arquivo = new byte [(int) foto.getSize()];
 			foto.getInputStream().read(arquivo);
 			
-			String storage = "/Users/joaojusto/desktop/storage/";
-			///Users/joaojusto/desktop/storage/<nome_do_arquivo>			
+			String storage = "/home/joao-justo/Desktop/storage/";
+			////home/joao-justo/Desktop/storage/<nome_do_arquivo>			
 			File file = new File(storage + foto.getSubmittedFileName());
 			FileOutputStream out = new FileOutputStream(file);
 			out.write(arquivo);

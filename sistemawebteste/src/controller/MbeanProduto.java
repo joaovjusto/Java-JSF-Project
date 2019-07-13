@@ -24,6 +24,7 @@ public class MbeanProduto {
 	private List<Produto> produtos;
 	private Integer id;
 	private String nome;	
+	private String categoria;
 	private String preco;
 	private String descricao;
 
@@ -43,6 +44,7 @@ public class MbeanProduto {
 			 produto.setNome(nome);
 			 produto.setPreco(preco);
 			 produto.setDescricao(descricao);
+			 produto.setCategoria(categoria);
 			 produto.setCaminhoDaImagem(caminhoDaImagem);
 
 			 produtoService.salvar(produto);
@@ -51,6 +53,7 @@ public class MbeanProduto {
 			 nome = null;
 			 preco = null;		
 			 descricao = null;	
+			 categoria = null;
 			 
 			 listar();
 		} catch (Exception e) {			
@@ -63,8 +66,8 @@ public class MbeanProduto {
 			byte [] arquivo = new byte [(int) foto.getSize()];
 			foto.getInputStream().read(arquivo);
 			
-			String storage = "/Users/joaojusto/desktop/storage/";
-			///Users/joaojusto/desktop/storage/<nome_do_arquivo>			
+			String storage = "/home/joao-justo/Desktop/storage/";
+			////home/joao-justo/Desktop/storage/<nome_do_arquivo>			
 			File file = new File(storage + foto.getSubmittedFileName());
 			FileOutputStream out = new FileOutputStream(file);
 			out.write(arquivo);
@@ -86,6 +89,7 @@ public class MbeanProduto {
 		this.id = produto.getId();
 		this.preco = produto.getPreco();
 		this.descricao = produto.getDescricao();
+		this.categoria = produto.getCategoria();
 		this.nome = produto.getNome();		
 		
 		return "";
@@ -135,6 +139,14 @@ public class MbeanProduto {
 
 	public void setFoto(Part foto) {
 		this.foto = foto;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
 }

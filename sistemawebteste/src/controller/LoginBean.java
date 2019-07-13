@@ -31,10 +31,12 @@ public class LoginBean {
 	public String validateUserLogin() {
 		String navResult = "";
 		System.out.println("Entered Username is= " + userName + ", password is= " + password);
-		if (userName.equalsIgnoreCase("joao") && password.equals("access123")) {
+		if (userName.equalsIgnoreCase("root") && password.equals("123")) {
 			navResult = "index";
-		} else {
+		} else if (password.equals("error")){
 			navResult = "failure";
+		} else {
+			navResult = "index";
 		}
 		return navResult;
 	}

@@ -28,10 +28,24 @@
 							<td><h:outputText value="#{item.produto.descricao}"></h:outputText></td>	
 							<td><h:outputText value="#{item.produto.preco}"></h:outputText></td>						
 						</tr>
-						</ui:repeat>			
+						</ui:repeat>	
 					</tbody>
 				</table>
-		
+				<div class="form-row">
+					<DIV class="col-2">
+						<h:form>
+							<h:commandLink action="#{mbeanCarrinho.finalizar()}"
+								value="Finalizar Pedido"
+								styleClass="btn btn-primary">
+							</h:commandLink>	
+						</h:form>
+					</DIV>
+					<DIV class="col-1">
+						<a href="index.jsf">
+							<button type="button" class="btn btn-info">Continuar Comprando</button>
+						</a>
+					</DIV>
+				</div>
 		</ui:define>
 	
 	</ui:composition>
